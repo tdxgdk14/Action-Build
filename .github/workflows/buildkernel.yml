@@ -893,6 +893,8 @@ jobs:
 
       # 自定义补丁
       - name: Apply custom patch
+        env:
+          FILE: ${{ github.event.inputs.FILE }}
         run: |
           cd kernel_workspace/kernel_platform/msm-kernel
           PATCH_DIR="${GITHUB_WORKSPACE}/kernel_workspace/Action-Build/patches"
