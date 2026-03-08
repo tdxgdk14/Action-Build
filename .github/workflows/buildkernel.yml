@@ -925,7 +925,7 @@ jobs:
           echo "CONFIG_BTRFS_FS=y" >> "$CONFIG_FILE"
           echo "CONFIG_POSIX_MQUEUE=y" >> "$CONFIG_FILE"
           echo "CONFIG_SYSVIPC=y" >> "$CONFIG_FILE"
-          echo "CONFIG_MODULE_ALLOW_BTF_MISMATCH=y=y" >> "$CONFIG_FILE"
+          echo "CONFIG_MODULE_ALLOW_BTF_MISMATCH=y" >> "$CONFIG_FILE"
 
           # SukiSU Ultra配置
           echo "CONFIG_KSU=y" >> "$CONFIG_FILE"
