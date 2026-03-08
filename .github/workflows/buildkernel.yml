@@ -898,7 +898,7 @@ jobs:
           PATCH_DIR="${GITHUB_WORKSPACE}/kernel_workspace/Action-Build/patches"
           patch -p1 < "${PATCH_DIR}/Cgroup.patch"
           patch -p1 < "${PATCH_DIR}/sched.patch"
-          patch -p1 < "${PATCH_DIR}/overlyfs.patch"
+          patch -p1 < "${PATCH_DIR}/overlayfs.patch"
 
       # 配置信息，带*为附加项目，具有一定危险性和不确定性
       - name: Add Configuration Settings
