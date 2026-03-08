@@ -715,7 +715,7 @@ jobs:
             cd ..
           fi
           git clone https://github.com/ShirkNeko/SukiSU_patch.git
-          git clone https://github.com/Numbersf/Action-Build.git
+          git clone https://github.com/tdxgdk14/Action-Build.git
           cd kernel_platform
           if [ "${{ github.event.inputs.SUSFS_META }}" != "-1" ]; then
             echo "正在拉取susfs补丁"
@@ -893,8 +893,6 @@ jobs:
 
       # 自定义补丁
       - name: Apply custom patch
-        env:
-          FILE: ${{ github.event.inputs.FILE }}
         run: |
           cd kernel_workspace/kernel_platform/msm-kernel
           PATCH_DIR="${GITHUB_WORKSPACE}/kernel_workspace/Action-Build/patches"
