@@ -1,10 +1,10 @@
-# Android 13 (5.15) LXC/Docker Patches
+# Android 14 (5.15) LXC/Docker Patches
 
 ## Kernel Source
-Branch: `android13-5.15-2025-01` from https://android.googlesource.com/kernel/common
+Branch: `android14-5.15-2025-01` from https://android.googlesource.com/kernel/common
 
 ## Description
-These patches enable LXC and Docker container support on Android 13 GKI kernels (5.15). They modify the kernel to support container namespaces, overlayfs, and other necessary features while maintaining ABI compatibility.
+These patches enable LXC and Docker container support on Android 14 GKI kernels (5.15). They modify the kernel to support container namespaces, overlayfs, and other necessary features while maintaining ABI compatibility.
 
 ## What These Patches Do
 
