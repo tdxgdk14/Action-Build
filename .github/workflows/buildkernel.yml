@@ -898,7 +898,6 @@ jobs:
           PATCH_DIR="${GITHUB_WORKSPACE}/kernel_workspace/Action-Build/a13-5.15"
           patch -p1 < "${PATCH_DIR}/overlayfs_dont_make_DCACHE_OP_HASH_and_DCACHE_OP_COMPARE_weird.patch"
           patch -p1 < "${PATCH_DIR}/Ignore_symbols_crc_check.patch"
-          patch -p1 < "${PATCH_DIR}/0001-ANDROID-sched-Move-SYSVIPC-fields-to-the-end-of-task.patch"
           patch -p1 < "${PATCH_DIR}/cgroup_fix_cgroup_prefix.patch"
           patch -p1 < "${PATCH_DIR}/gki_use_Android_ABI_padding_for_ipc_namespace_struct.patch"
           patch -p1 < "${PATCH_DIR}/GKI_use_Android_ABI_padding_for_POSIX_MQUEUE_user_struct_fields.patch"
