@@ -899,7 +899,7 @@ jobs:
           patch -p1 < "${PATCH_DIR}/overlayfs_dont_make_DCACHE_OP_HASH_and_DCACHE_OP_COMPARE_weird.patch"
           patch -p1 < "${PATCH_DIR}/Ignore_symbols_crc_check.patch"
           patch -p1 < "${PATCH_DIR}/cgroup_fix_cgroup_prefix.patch"
-          patch -p1 < "${PATCH_DIR}/gki_use_Android_ABI_padding_for_ipc_namespace_struct.patch"
+          patch -p1 --fuzz=3 < "${PATCH_DIR}/gki_use_Android_ABI_padding_for_ipc_namespace_struct.patch"
           patch -p1 < "${PATCH_DIR}/GKI_use_Android_ABI_padding_for_POSIX_MQUEUE_user_struct_fields.patch"
           patch -p1 < "${PATCH_DIR}/gki_use_Android_ABI_padding_for_SYSVIPC_task_struct_fields.patch"
 

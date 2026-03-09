@@ -29,8 +29,6 @@ index 5ba6558ea63a..c8e9f4d2a1b3 100644
 +++ b/include/linux/ipc_namespace.h
 @@ -12,6 +12,7 @@
  #include <linux/rhashtable-types.h>
- #include <linux/sysctl.h>
- #include <linux/percpu_counter.h>
 +#include <linux/android_kabi.h>
  
  struct user_namespace;
