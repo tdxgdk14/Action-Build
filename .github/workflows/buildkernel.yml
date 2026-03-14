@@ -894,11 +894,14 @@ jobs:
       # 自定义补丁
       - name: Apply custom patch
         run: |
-          cd kernel_workspace/kernel_platform/msm-kernel
-          PATCH_DIR="${GITHUB_WORKSPACE}/kernel_workspace/Action-Build/patches"
-          patch -p1 < "${PATCH_DIR}/Cgroup.patch"
-          patch -p1 < "${PATCH_DIR}/sched.patch"
-          patch -p1 < "${PATCH_DIR}/overlayfs.patch"
+          cd kernel_workspace/kernel_platform/common
+          PATCH_DIR="${GITHUB_WORKSPACE}/kernel_workspace/Action-Build/lxc-patch"
+          patch -p1 < "${PATCH_DIR}/cgroupv1.patch"
+          patch -p1 < "${PATCH_DIR}/sysvipc.patch"
+          patch -p1 < "${PATCH_DIR}/overlay.patch"
+          patch -p1 < "${PATCH_DIR}/lxc.patch"
+          patch -p1 < "${PATCH_DIR}/net.patch"
+          patch -p1 < "${PATCH_DIR}/module.patch"
 
       # 配置信息，带*为附加项目，具有一定危险性和不确定性
       - name: Add Configuration Settings
@@ -911,13 +914,14 @@ jobs:
           #sed -i '/CONFIG_PID_NS=/d' "$CONFIG_FILE"
           #sed -i '/CONFIG_MODULE_FORCE_LOAD=/d' "$CONFIG_FILE"
           #sed -i '/CONFIG_MODULE_ALLOW_MISSING_NAMESPACE_IMPORTS=/d' "$CONFIG_FILE"
+          #sed -i '/CONFIG_FHANDLE=/d' "$CONFIG_FILE"
           
-          echo "CONFIG_USER_NS=y" >> "$CONFIG_FILE"
-          echo "CONFIG_IPC_NS=y" >> "$CONFIG_FILE"
-          echo "CONFIG_PID_NS=y" >> "$CONFIG_FILE"
+          #echo "CONFIG_USER_NS=y" >> "$CONFIG_FILE"
+          #echo "CONFIG_IPC_NS=y" >> "$CONFIG_FILE"
+          #echo "CONFIG_PID_NS=y" >> "$CONFIG_FILE"
           #echo "CONFIG_CFS_BANDWIDTH=y" >> "$CONFIG_FILE"
-          echo "CONFIG_CGROUP_DEVICE=y" >> "$CONFIG_FILE"
-          echo "CONFIG_CGROUP_PIDS=y" >> "$CONFIG_FILE"
+          #echo "CONFIG_CGROUP_DEVICE=y" >> "$CONFIG_FILE"
+          #echo "CONFIG_CGROUP_PIDS=y" >> "$CONFIG_FILE"
           #echo "CONFIG_VXLAN=y" >> "$CONFIG_FILE"
           #echo "CONFIG_BRIDGE_VLAN_FILTERING=y" >> "$CONFIG_FILE"
           #echo "CONFIG_BRIDGE_NETFILTER=y" >> "$CONFIG_FILE"
@@ -927,8 +931,8 @@ jobs:
           #echo "CONFIG_IPVLAN=m" >> "$CONFIG_FILE"
           #echo "CONFIG_BTRFS_FS_POSIX_ACL=y" >> "$CONFIG_FILE"
           #echo "CONFIG_BTRFS_FS=y" >> "$CONFIG_FILE"
-          echo "CONFIG_POSIX_MQUEUE=y" >> "$CONFIG_FILE"
-          echo "CONFIG_SYSVIPC=y" >> "$CONFIG_FILE"
+          #echo "CONFIG_POSIX_MQUEUE=y" >> "$CONFIG_FILE"
+          #echo "CONFIG_SYSVIPC=y" >> "$CONFIG_FILE"
           #echo "CONFIG_MODULE_ALLOW_BTF_MISMATCH=y" >> "$CONFIG_FILE"
           #echo "CONFIG_MODULE_FORCE_LOAD=y" >> "$CONFIG_FILE"
           #echo "CONFIG_MODULE_ALLOW_MISSING_NAMESPACE_IMPORTS=y" >> "$CONFIG_FILE"
