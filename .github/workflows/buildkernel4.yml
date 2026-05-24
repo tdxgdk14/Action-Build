@@ -1106,7 +1106,7 @@ jobs:
         run: |
           mkdir -p kernel_workspace/lxcpatch
           cd kernel_workspace/lxcpatch
-          git clone https://github.com/tdxgdk14/Action-Build.git
+          git clone https://github.com/tdxgdk14/Action-Build.git -b ReSukiSU
           cd ../..
           cd kernel_workspace/kernel_platform/common
           PATCH_DIR="${GITHUB_WORKSPACE}/kernel_workspace/lxcpatch/Action-Build/lxc-patch"
@@ -1116,6 +1116,11 @@ jobs:
           patch -p1 < "${PATCH_DIR}/lxc.patch"
           patch -p1 < "${PATCH_DIR}/net.patch"
           patch -p1 < "${PATCH_DIR}/module.patch"
+          patch -p1 < "${PATCH_DIR}/esp.patch"
+          patch -p1 < "${PATCH_DIR}/esp1.patch"
+          patch -p1 < "${PATCH_DIR}/ptrace.patch"
+          patch -p1 < "${PATCH_DIR}/skbbuff.patch"
+          patch -p1 < "${PATCH_DIR}/skbbuff1.patch"
 
       # 配置信息，带*为附加项目，具有一定危险性和不确定性
       - name: Add Configuration Settings
