@@ -1,8 +1,11 @@
 ### 这里是目前支持的所有机型及其对应大安卓版本清单
 ### ``This list shows all currently supported device models and their Android versions.``
+#### 如果有特殊后缀``AOSP``、``bak``、``Canary``，建议优先使用它们；``global``后缀是特殊处理的同机型，请确保适用
+#### ``If there are special suffixes such as AOSP, bak, or Canary, it is recommended to prioritize using them; the global suffix refers to a specially handled variant of the same device model, so please ensure compatibility.``
 
 ```
 # Android16
+oneplus_nord_3_b
 oneplus_10_pro_b
 oneplus_pad_lite_b
 oneplus_11r_b
@@ -15,9 +18,14 @@ oneplus_ace2_pro_b
 oneplus_ace3_b
 oneplus_open_b
 oneplus_nord_ce4_b
+oneplus_n6_b
+oneplus_n6x_b
 oneplus_12_b
 oneplus_pad_go_2_b
+oneplus_turbo_6x_b
 oneplus_nord_ce4_lite_5g_b
+oneplus_nord_ce6
+oneplus_nord_ce6_lite_b
 oneplus_turbo_6v
 oneplus_nord_4_b
 oneplus_ace_3v_b
@@ -37,14 +45,17 @@ oneplus_pad_2_pro_b
 oneplus_pad_3_b
 oneplus_ace5_race_b
 oneplus_ace5_ultra_b
-oneplus_ace5_ultra_bak_b
 oneplus_pad2_mt6991_b
 oneplus_ace_6
 oneplus_turbo_6
+oneplus_nord_6
 oneplus_ace_6t
 oneplus_15r
 oneplus_15
 oneplus_15t
+oneplus_pad_3_pro
+oneplus_pad_4
+oneplus_ace6_ultra
 realme_neo_8
 realme_neo6_se_b
 realme_gt_neo6_b
@@ -128,6 +139,7 @@ oneplus_pad_3
 oneplus_ace5_race
 oneplus_ace5_ultra
 realme_gt5_v
+realme_gt_neo5se_v
 realme_gt5pro_v
 realme_gt6_v
 realme_gt_neo6_v
@@ -183,6 +195,7 @@ oneplus_11_u
 oneplus_ace_u
 oneplus_ace_race_u
 oneplus_10r_u
+realme_gt_neo3_u
 oppo_find_n3_flip_u
 oppo_find_x6_u
 oppo_reno12_pro_mt6985_u
@@ -191,6 +204,7 @@ oppo_reno12_pro_mt6985_u
 oneplus_11_t
 oneplus_10r_t
 oneplus_ace_t
+realme_gt_neo3_t
 oppo_find_n3_flip
 oppo_find_x6
 
