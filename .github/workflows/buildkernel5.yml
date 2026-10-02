@@ -956,23 +956,15 @@ jobs:
           curl -LSs https://raw.githubusercontent.com/vc-teahouse/Baseband-guard/main/setup.sh | bash
           sed -i '/^config LSM$/,/^help$/{ /^[[:space:]]*default/ { /baseband_guard/! s/selinux/selinux,baseband_guard/ } }' ./security/Kconfig
           
-      - name: Debug - list repo files
+      - name: Clone my fork for custom scripts
         run: |
-          echo "=== GITHUB_WORKSPACE ==="
-          pwd
-          echo "=== repo root ==="
-          ls -la
-          echo "=== scripts/ ==="
-          ls -la scripts/ || echo "no scripts dir"
-          echo "=== find apply-custom-lxc ==="
-          find . -maxdepth 3 -name 'apply-custom-lxc.sh' -print
-          echo "=== current branch ==="
-          git branch --show-current
-          echo "=== git log -1 ==="
-          git log -1 --oneline
-          
+          mkdir -p kernel_workspace/lxcpatch
+          cd kernel_workspace/lxcpatch
+          git clone https://github.com/tdxgdk14/Action-Build.git -b ReSukiSU
+
       - name: Apply custom LXC patches
-        run: bash "${{ github.workspace }}/scripts/apply-custom-lxc.sh"
+        if: ${{ github.event.inputs.DROID_SPACES == 'false' }}
+        run: bash "${GITHUB_WORKSPACE}/kernel_workspace/lxcpatch/Action-Build/scripts/apply-custom-lxc.sh"
 
       # 配置信息，带*为附加项目，具有一定危险性和不确定性
       - name: Add Configuration Settings
