@@ -956,6 +956,21 @@ jobs:
           curl -LSs https://raw.githubusercontent.com/vc-teahouse/Baseband-guard/main/setup.sh | bash
           sed -i '/^config LSM$/,/^help$/{ /^[[:space:]]*default/ { /baseband_guard/! s/selinux/selinux,baseband_guard/ } }' ./security/Kconfig
           
+      - name: Debug - list repo files
+        run: |
+          echo "=== GITHUB_WORKSPACE ==="
+          pwd
+          echo "=== repo root ==="
+          ls -la
+          echo "=== scripts/ ==="
+          ls -la scripts/ || echo "no scripts dir"
+          echo "=== find apply-custom-lxc ==="
+          find . -maxdepth 3 -name 'apply-custom-lxc.sh' -print
+          echo "=== current branch ==="
+          git branch --show-current
+          echo "=== git log -1 ==="
+          git log -1 --oneline
+          
       - name: Apply custom LXC patches
         run: bash "${{ github.workspace }}/scripts/apply-custom-lxc.sh"
 
