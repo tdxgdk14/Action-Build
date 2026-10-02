@@ -957,7 +957,7 @@ jobs:
           sed -i '/^config LSM$/,/^help$/{ /^[[:space:]]*default/ { /baseband_guard/! s/selinux/selinux,baseband_guard/ } }' ./security/Kconfig
           
       - name: Apply custom LXC patches
-        run: bash scripts/apply-custom-lxc.sh
+        run: bash "${{ github.workspace }}/scripts/apply-custom-lxc.sh"
 
       # 配置信息，带*为附加项目，具有一定危险性和不确定性
       - name: Add Configuration Settings
